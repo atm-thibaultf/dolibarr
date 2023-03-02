@@ -1796,4 +1796,21 @@ class MoLine extends CommonObjectLine
 		return $this->deleteCommon($user, $notrigger);
 		//return $this->deleteCommon($user, $notrigger, 1);
 	}
+
+
+	/**
+	 * Function used to return Mo of MoLine
+	 *
+	 * @return object if OK, -1 if KO
+	 */
+	public function getMo($fk_mo)
+	{
+
+		$Mo = new Mo($this->db);
+
+		$Mo = $Mo->fetchCommon(kf_mo);
+		$error = 0;
+		return $Mo;
+
+	}
 }
